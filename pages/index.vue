@@ -2,15 +2,11 @@
   <div class="section">
     <div class="container">
       <div id="shop_container">
-        <store-item class="item" powerup-identifier="Peely" price="10">
-          <div slot="title">
-            Peely skin
-          </div>
-          <div slot="description">
-            Each click gives one more dab
-          </div>
-        </store-item>
-        <store-item class="item" powerup-identifier="Tomato" price=30>
+        <store-item class="item"
+                    powerup-identifier="Tomato"
+                    price="10" price-raise-percentage="10"
+                    image-url="https://progameguides.com/wp-content/uploads/2017/12/fortnite-outfit-tomatohead-full.jpg"
+                    text-color="white">
           <div slot="title">
             Tomato Head skin
           </div>
@@ -18,12 +14,30 @@
             Gets one dab every 5 seconds
           </div>
         </store-item>
-        <store-item class="item" powerup-identifier="Fishstick" price="1000">
+        <store-item class="item"
+                    powerup-identifier="Peely"
+                    price="20"
+                    price-raise-percentage="10"
+                    image-url="https://www.androidcentral.com/sites/androidcentral.com/files/styles/w1600h900crop/public/article_images/2019/03/fortnite-peely-skin.jpg?itok=FwlTDd9K"
+                    text-color="black" >
+          <div slot="title">
+            Peely skin
+          </div>
+          <div slot="description">
+            Each click gives one more dab
+          </div>
+        </store-item>
+        <store-item class="item"
+                    powerup-identifier="Fishstick"
+                    price="0"
+                    price-raise-percentage="10"
+                    image-url="https://s3.dexerto.com/thumbnails/_thumbnailLarge/265870/Screen-Shot-2018-12-27-at-12.15.59.jpg"
+                    text-color="black">
           <div slot="title">
             Fishstick skin
           </div>
           <div slot="description">
-            Does some more and more and more and more and dab
+            Gives 1 dab every second
           </div>
         </store-item>
       </div>
@@ -47,6 +61,7 @@
   import FortniteDefaultSkin from "../components/FortniteDefaultSkin";
   import Counter from "../components/counter";
   import StoreItem from "../components/storeItem";
+  import powerup, {startInterval} from "../components/powerup";
 
   export default {
     components: {StoreItem, Counter, FortniteDefaultSkin, Modal},
@@ -55,6 +70,7 @@
 
       }
     },
+
     methods: {
       show(){
         this.$store.dispatch('toggleModal');
@@ -63,12 +79,18 @@
     computed: {
 
     },
-    created() {
+    beforeMount() {
 
+    },
+    created() {
+      startInterval(this)
     }
   }
 </script>
 <style>
+  html{
+    overflow: auto;
+  }
   .ver{
     border: 3px solid purple;
     display: flex;
@@ -92,8 +114,8 @@
     align-items: center;
     display: flex;
     font-size: 40px;
-    width: 200px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
   }
 
 </style>

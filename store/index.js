@@ -1,3 +1,5 @@
+
+
 export const state = () => ({
   modal: {
     active: false,
@@ -5,7 +7,8 @@ export const state = () => ({
   },
   isDabbed: true,
   points: 0,
-  pointsPerClick: 1
+  pointsPerClick: 1,
+  pointsPerSecond: 0
 })
 
 export const mutations = {
@@ -20,10 +23,13 @@ export const mutations = {
   },
   toggleDab(state) {
     state.isDabbed = !state.isDabbed;
+  },
+  addPointsPerSecond(state, value) {
+    state.pointsPerSecond = state.pointsPerSecond + value;
   }
 }
-
 export const actions = {
+
   toggleModal (context) {
     console.log(context);
     context.commit('setModalActive', !context.state.modal.active);
