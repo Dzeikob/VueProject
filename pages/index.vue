@@ -16,7 +16,7 @@
         </store-item>
         <store-item class="item"
                     powerup-identifier="Peely"
-                    price="20"
+                    price="50"
                     price-raise-percentage="15"
                     image-url="https://www.androidcentral.com/sites/androidcentral.com/files/styles/w1600h900crop/public/article_images/2019/03/fortnite-peely-skin.jpg?itok=FwlTDd9K"
                     text-color="black" >
@@ -38,6 +38,19 @@
           </div>
           <div slot="description">
             Gives 5 dabs every second
+          </div>
+        </store-item>
+        <store-item class="item"
+                    powerup-identifier="SkullTrooper"
+                    price="1000"
+                    price-raise-percentage="20"
+                    image-url="https://progameguides.com/wp-content/uploads/2017/12/fortnite-outfit-skull-trooper.jpg"
+                    text-color="white">
+          <div slot="title">
+            Skull Trooper skin
+          </div>
+          <div slot="description">
+            Gives 20 dabs every second
           </div>
         </store-item>
 

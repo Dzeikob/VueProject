@@ -14,7 +14,6 @@
         clickFortniteDefault(){
           console.log("Skin clicked: " + this.$store.state.pointsPerClick);
           this.$store.dispatch('addPoints', this.$store.state.pointsPerClick);
-          //this.$store.commit('toggleDab');
         },
       }
     }
