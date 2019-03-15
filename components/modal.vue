@@ -2,9 +2,11 @@
   <div class="modal" :class="{'is-active' : modal.active}">
     <div class="modal-background"></div>
     <div class="modal-content">
-      <slot></slot>
+      <div class="box">
+        <p style="color: black"><slot></slot></p>
+        <button @click="modalClicked" class="modal-close is-large" aria-label="close" ></button>
+      </div>
     </div>
-    <button @click="modalClicked" class="modal-close is-large" aria-label="close" ></button>
   </div>
 </template>
 
@@ -30,5 +32,8 @@
 </script>
 
 <style scoped>
+  .box{
+    background-color: rgba(255,255,255, 0.5);
+  }
 
 </style>

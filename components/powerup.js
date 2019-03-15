@@ -12,6 +12,9 @@ function handlePowerup(context, identifier) {
     case "SkullTrooper":
       context.$store.commit('addPointsPerSecond', 20);
       break;
+    case "Victory":
+      Victory(context);
+      break;
     default:
   }
   console.log(identifier);
@@ -24,6 +27,10 @@ function startInterval(context, interval = 10) {
     console.log(pointsGained);
     context.$store.dispatch('addPoints', pointsGained);
   }, interval);
+}
+
+function Victory(context) {
+  context.$store.dispatch('toggleModal')
 }
 
 export {handlePowerup, startInterval}

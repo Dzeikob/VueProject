@@ -1,21 +1,26 @@
 <template>
   <div>
-    <div class="box" v-bind:style="{ backgroundImage: 'url(' + imageUrl + ')' , color: textColor}">
+    <div class="box" v-bind:style="{ backgroundImage: 'url(' + imageUrl + ')' , color: 'white'}">
       <div class="media-content">
-        <div class="content">
-          <div id="titleprice">
-            <strong :style="{color: textColor}">
-              <slot name="title"></slot>
-            </strong>
-            <br>
-            Price: {{newPrice}} dabs
-            <br><br>
-            Owned: {{ownedItems}}
+
+          <div class="content">
+            <div id="titleprice">
+              <div class="box inner">
+                <strong :style="{color: 'white'}">
+                  <slot name="title"></slot>
+                </strong>
+                <br>
+                Price: {{newPrice}} dabs
+                <br><br>
+                Owned: {{ownedItems}}
+                <br><br><br>
+                <slot name="description"></slot>
+              </div>
+            </div>
+            <button :disabled="hasEnoughMoney" v-on:click="itemClicked" class="button">Buy</button>
           </div>
-          <button :disabled="hasEnoughMoney" v-on:click="itemClicked" class="button">Buy</button>
+
         </div>
-        <slot name="description"></slot>
-      </div>
     </div>
   </div>
 
@@ -57,24 +62,27 @@
       price: 0,
       priceRaisePercentage: 0,
       imageUrl: "",
-      textColor: ""
     }
   }
 </script>
 
 <style scoped>
+  .inner {
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    color: white;
+  }
   .content {
     display: flex;
     justify-content: space-between;
-
   }
-
   #titleprice {
     line-height: 10px;
     font-weight: bold;
   }
   .box {
     background-size: cover;
+    background-position-y: -30px;
   }
 
 </style>

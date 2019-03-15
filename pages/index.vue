@@ -53,6 +53,19 @@
             Gives 20 dabs every second
           </div>
         </store-item>
+        <store-item class="item"
+                    powerup-identifier="Victory"
+                    price="100000"
+                    price-raise-percentage="20"
+                    image-url="https://pbs.twimg.com/media/Dh521m6X4AEsH_k.jpg"
+                    text-color="yellow">
+          <div slot="title">
+              Victory Royale
+          </div>
+          <div slot="description">
+            Wins the game
+          </div>
+        </store-item>
 
       </div>
       <div class="ver-container">
@@ -65,7 +78,6 @@
       </div>
     </div>
     <modal>Epic fortnite victory royale</modal>
-    <button @click="show">play fornite</button>
   </div>
 </template>
 
