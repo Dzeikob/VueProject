@@ -4,20 +4,20 @@
       <div id="shop_container">
         <store-item class="item"
                     powerup-identifier="Tomato"
-                    price="10" price-raise-percentage="10"
+                    price="10" price-raise-percentage="15"
                     image-url="https://progameguides.com/wp-content/uploads/2017/12/fortnite-outfit-tomatohead-full.jpg"
                     text-color="white">
           <div slot="title">
             Tomato Head skin
           </div>
           <div slot="description">
-            Gets one dab every 5 seconds
+            Gets one dab every second
           </div>
         </store-item>
         <store-item class="item"
                     powerup-identifier="Peely"
                     price="20"
-                    price-raise-percentage="10"
+                    price-raise-percentage="15"
                     image-url="https://www.androidcentral.com/sites/androidcentral.com/files/styles/w1600h900crop/public/article_images/2019/03/fortnite-peely-skin.jpg?itok=FwlTDd9K"
                     text-color="black" >
           <div slot="title">
@@ -29,17 +29,18 @@
         </store-item>
         <store-item class="item"
                     powerup-identifier="Fishstick"
-                    price="0"
-                    price-raise-percentage="10"
+                    price="100"
+                    price-raise-percentage="20"
                     image-url="https://s3.dexerto.com/thumbnails/_thumbnailLarge/265870/Screen-Shot-2018-12-27-at-12.15.59.jpg"
                     text-color="black">
           <div slot="title">
             Fishstick skin
           </div>
           <div slot="description">
-            Gives 1 dab every second
+            Gives 5 dabs every second
           </div>
         </store-item>
+
       </div>
       <div class="ver-container">
         <div class="ver">

@@ -14,24 +14,16 @@ function handlePowerup(context, identifier) {
   console.log(identifier);
 
 }
-function startInterval(context, interval = 100) {
+function startInterval(context, interval = 10) {
   let divider = 1000 / interval;
-  let intervalObj = setInterval(() => {
+  setInterval(() => {
     let pointsGained = context.$store.state.pointsPerSecond / divider;
-    if(Math.floor(context.$store.state.points + pointsGained) > Math.floor(context.$store.state.points)){
-      context.$store.commit("toggleDab");
-    }
     context.$store.dispatch('addPoints', pointsGained);
-    if(context.$store.state.pointsPerSecond > 500) {
-      clearInterval(intervalObj);
-      startInterval(context, 200)
-    }
-
   }, interval);
 }
 
 function tomatoHeadPowerup(context) {
-  context.$store.commit('addPointsPerSecond', 0.2);
+  context.$store.commit('addPointsPerSecond', 1);
 }
 
 function peelySkinPowerup(context) {
@@ -39,7 +31,7 @@ function peelySkinPowerup(context) {
 }
 
 function fishsticksSkinPowerup(context) {
-  context.$store.commit('addPointsPerSecond', 1);
+  context.$store.commit('addPointsPerSecond', 5);
 }
 
 export {handlePowerup, startInterval}

@@ -9,14 +9,18 @@ export const state = () => ({
   points: 0,
   pointsPerClick: 1,
   pointsPerSecond: 0
-})
+});
 
 export const mutations = {
   setModalActive (state, value) {
     state.modal.active = value;
   },
   addPointsMutation(state, value) {
+    let prevValue = state.points;
     state.points = state.points + value;
+    if(Math.floor(prevValue) < Math.floor(state.points)){
+      this.commit('toggleDab');
+    }
   },
   addPointsPerClick(state, value) {
     state.pointsPerClick = state.pointsPerClick + value;
@@ -35,6 +39,6 @@ export const actions = {
     context.commit('setModalActive', !context.state.modal.active);
   },
   addPoints(context, value) {
-    context.commit('addPointsMutation', value)
+    context.commit('addPointsMutation', value);
   },
-}
+};
